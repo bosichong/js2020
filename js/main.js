@@ -7,8 +7,9 @@
 // document.getElementById("pa").innerHTML = Date(); //修改ID=pa的HTML内容
 console.log("这是一个快速学习JavaScript的学习笔记"); //控制态输出
 // 导航
-document.getElementById("lt").innerHTML = '<a href="#m1">JavaScript简介</a>' +
-    '<a href="#m2">JavaScript开发环境</a>'
+document.getElementById("lt").innerHTML = '<ul>'+'<li><a href="#m1">JavaScript简介</a>' +
+    '<li><a href="#m2">JavaScript开发环境</a>'+
+    '</ul>';
 
 
 //正文
