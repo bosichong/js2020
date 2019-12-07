@@ -25,9 +25,10 @@ wrbr();
 
 wrh2('JavaScript开发环境')
 wrp('以前我在网上看到一些初级编程的教程，经常有人写到：新手敲代码要用记事本手打，这样学习印象深刻！')
-wrp('这么确实使人深刻，但是我想愉快的学习不可以吗？答案当然是True了。')
+wrp('用记事本敲代码真的能是人印象深刻？但是我想愉快的学习不可以吗？答案当然是True了。')
 
-wrmk('![其实这不是站长的本人的照片](http://www.17python.com/media/upload/2017/08/avatar.jpg)')
+wrp("个人目前认为最好用的JavaScript IDE 就是：Visual Studio Code，简称VS code")
+
 
 
 
@@ -60,14 +61,14 @@ function wrbr() {
  */
 function wrp(str) {
     //写入<p>
-    document.write('<p>'+str)
+    document.write('<p>' + str)
 }
 
 /**
  * JS 解析Markdown文本
  * @param {*} markdownstr Markdown文本
  */
-function wrmk(markdownstr){
+function wrmk(markdownstr) {
     // 撰写Markdown文档
     document.write(marked(markdownstr));
 }
