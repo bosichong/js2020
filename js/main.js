@@ -6,11 +6,7 @@
 // document.write("<p id='pa'>test</p>"); //写入一段HTML代码
 // document.getElementById("pa").innerHTML = Date(); //修改ID=pa的HTML内容
 console.log("这是一个快速学习JavaScript的学习笔记"); //控制态输出
-// 导航
-document.getElementById("lt").innerHTML = '<ul>'+'<li><a href="#m1">JavaScript简介</a>' +
-    '<li><a href="#m2">JavaScript开发环境</a>'+
-    '<li><a href="#m3">推荐一些VS code的JS相关插件</a>'+
-    '</ul>';
+
 
 
 //正文
@@ -47,11 +43,3 @@ document.getElementById("rt").innerHTML = '<h2>这是一个快速学习JavaScrip
 
 
 
-/**
- * JS 解析Markdown文本
- * @param {*} markdownstr Markdown文本
- */
-function wrmk(markdownstr) {
-    // 撰写Markdown文档
-    return marked(markdownstr);
-}
