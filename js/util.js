@@ -44,6 +44,9 @@ function loadMarkdown(url,id) {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             // alert(xmlhttp.responseText)
             document.getElementById(id).innerHTML = wrmk(xmlhttp.responseText);
+            //<!-- highlight.js AJAX加载后执行 -->
+            hljs.initHighlighting.called = false;
+            hljs.initHighlighting();
         }
     }
     
