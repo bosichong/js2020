@@ -1,5 +1,3 @@
-
-
 /**
  * JS 解析Markdown文本
  * @param {*} markdownstr Markdown文本
@@ -14,15 +12,16 @@ function wrmk(markdownstr) {
  * JS获取url参数
  * @param {*} variable 
  */
-function getQueryVariable(variable)
-{
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+            return pair[1];
+        }
+    }
+    return (false);
 }
 
 
@@ -30,7 +29,7 @@ function getQueryVariable(variable)
 /**
  * 加载Markdown文档并解析
  */
-function loadMarkdown(url,id) {
+function loadMarkdown(url, id) {
     var xmlhttp;
     if (window.XMLHttpRequest) {
         //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
@@ -40,16 +39,17 @@ function loadMarkdown(url,id) {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.onreadystatechange = function () {
-        
+
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            // alert(xmlhttp.responseText)
+            // alert(document.getElementById(id));
             document.getElementById(id).innerHTML = wrmk(xmlhttp.responseText);
+            // document.getElementById(id).innerHTML = "wrmk(xmlhttp.responseText)";
             //<!-- highlight.js AJAX加载后执行 -->
             hljs.initHighlighting.called = false;
             hljs.initHighlighting();
         }
     }
-    
+
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 
@@ -61,7 +61,7 @@ function loadMarkdown(url,id) {
 /**
  * AJAX
  */
-function loadHtml(url,id) {
+function loadHtml(url, id) {
     var xmlhttp;
     if (window.XMLHttpRequest) {
         //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
@@ -71,13 +71,13 @@ function loadHtml(url,id) {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.onreadystatechange = function () {
-        
+
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             // alert(xmlhttp.responseText)
             document.getElementById(id).innerHTML = xmlhttp.responseText;
         }
     }
-    
+
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 

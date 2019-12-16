@@ -5,3 +5,5 @@
 
 
 //  alert('test');
+
+document.querySelector("div").classList.add('aa');
