@@ -44,3 +44,33 @@ console.log(add());//=>3
     window.addOne=addOne;
 })()
 console.log(addOne(2));  // 3
+
+
+//JavaScript对象
+//定义对象
+var p = {fname:"javascript",lname:"function"}
+p.oname = "java";//对象添加属性
+//forin 遍历对象属性。
+for (k in p ){console.log(p[k]);}
+delete p.oname;
+console.log(p.oname);//undefined
+p.f = function (s) { console.log(s)}//方法
+p.f('定义对象中的方法。')
+
+// 定义类
+function Person(name,age){
+    this.name = name;
+    this.age = age;
+}
+var p1 = new Person("python",18);
+//通过prototype添加属性和方法。
+Person.prototype.where = 'china';
+Person.prototype.sayHello = function() {alert(this.name+" hello "+this.where)}
+// p1.sayHello();rt(p1 === Person.coun);
+
+
+
+
+
+
+
